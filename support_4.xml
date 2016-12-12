@@ -1,0 +1,27 @@
+
+<?xml version="1.0" encoding="UTF-8" ?><rss version="2.0">
+	<channel>
+		<title>Google Sitemap Generator Support Topics</title>
+		<description>Google Sitemap Generator Support Topics</description>
+		<link>http://www.arnebrachhold.de/projects/wordpress-plugins/google-xml-sitemaps-generator/</link>
+		<pubDate>Wed, 02 Jul 2014 7:54:35 +0000</pubDate>
+		<item>
+			<title>Common error messages in Google Webmaster Tools</title>
+			<link>http://www.arnebrachhold.de/redir/sitemap-feed-gwterrs/</link>
+			<guid isPermaLink="false">C2VZYxeTESzcCF2IhS13</guid>
+			<pubDate>Mon, 28 Apr 2014 00:00:00 +0000</pubDate>
+		</item>
+		<item>
+			<title>How to move your sitemap to the root of your domain</title>
+			<link>http://www.arnebrachhold.de/redir/sitemap-feed-movesm/</link>
+			<guid isPermaLink="false">C2VZYxeTESzcCF2IhS12</guid>
+			<pubDate>Sun, 27 Apr 2014 00:00:00 +0000</pubDate>
+		</item>
+		<item>
+			<title>Introducing a new format for your sitemap</title>
+			<link>http://www.arnebrachhold.de/redir/sitemap-feed-newformat/</link>
+			<guid isPermaLink="false">C2VZYxeTESzcCF2IhS1l</guid>
+			<pubDate>Sat, 26 Apr 2014 00:00:00 +0000</pubDate>
+		</item>
+	</channel>
+</rss>
