@@ -1678,7 +1678,7 @@ final class GoogleSitemapGenerator {
 		}
 
 		if(!$html) {
-			header('Content-Type: text/xml; charset=utf-8');
+			header('Content-Type: text/xml;charset=UTF-8');
 		}
 
 		$transientKey = "sm_cache_" . md5(serialize($options));
@@ -2190,46 +2190,46 @@ final class GoogleSitemapGenerator {
 	 * Sends anonymous statistics (disabled by default)
 	 */
 	public function SendStats() {
-		global $wp_version, $wpdb;
-
-		//Number of posts
-		$postCount = $this->RoundStatisticValue($wpdb->get_var("SELECT COUNT(*) FROM {$wpdb->posts} p WHERE p.post_status='publish'"));
-
-		//Number of comments
-		$commentsCount = wp_count_comments();
-		$commentsCount = $this->RoundStatisticValue($commentsCount->approved);
-
-		//PHP Version rounded to the minor (5.2 instead of 5.2.1-debian12)
-		$phpVersionInfo = explode(".",PHP_VERSION);
-		$phpVersion = $phpVersionInfo[0] . "." . $phpVersionInfo[1];
-
-		//Server software without version number
-		$serverSoftwareInfo = explode("/",strtolower($_SERVER["SERVER_SOFTWARE"]));
-		$serverSoftware = $serverSoftwareInfo[0];
-
-		//WP Version without any beta/alpha tags
-		$wpVersionInfo = explode("-",$wp_version);
-		$wpVersion = $wpVersionInfo[0];
-
-		$postData = array(
-			"v" => 1,
-			"tid" => "UA-65990-26",
-			"cid" => $this->GetOption('i_hash'),
-			"aip" => 1, //Anonymize
-			"t" => "event",
-			"ec" => "ping",
-			"ea" => "auto",
-			"ev" => 1,
-			"ul" => get_bloginfo('language'),
-			"cd1" => $wpVersion,
-			"cd2" => $this->GetVersion(),
-			"cd3" => $phpVersion,
-			"cd4" => $postCount,
-			"cd5" => $commentsCount,
-			"cd6" => $serverSoftware,
-		);
-
-		$this->RemoteOpen('http://www.google-analytics.com/collect', 'post', $postData);
+//     		global $wp_version, $wpdb;
+//     
+//     		//Number of posts
+//     		$postCount = $this->RoundStatisticValue($wpdb->get_var("SELECT COUNT(*) FROM {$wpdb->posts} p WHERE p.post_status='publish'"));
+//     
+//     		//Number of comments
+//     		$commentsCount = wp_count_comments();
+//     		$commentsCount = $this->RoundStatisticValue($commentsCount->approved);
+//     
+//     		//PHP Version rounded to the minor (5.2 instead of 5.2.1-debian12)
+//     		$phpVersionInfo = explode(".",PHP_VERSION);
+//     		$phpVersion = $phpVersionInfo[0] . "." . $phpVersionInfo[1];
+//     
+//     		//Server software without version number
+//     		$serverSoftwareInfo = explode("/",strtolower($_SERVER["SERVER_SOFTWARE"]));
+//     		$serverSoftware = $serverSoftwareInfo[0];
+//     
+//     		//WP Version without any beta/alpha tags
+//     		$wpVersionInfo = explode("-",$wp_version);
+//     		$wpVersion = $wpVersionInfo[0];
+//     
+//     		$postData = array(
+//     			"v" => 1,
+//     			"tid" => "UA-65990-26",
+//     			"cid" => $this->GetOption('i_hash'),
+//     			"aip" => 1, //Anonymize
+//     			"t" => "event",
+//     			"ec" => "ping",
+//     			"ea" => "auto",
+//     			"ev" => 1,
+//     			"ul" => get_bloginfo('language'),
+//     			"cd1" => $wpVersion,
+//     			"cd2" => $this->GetVersion(),
+//     			"cd3" => $phpVersion,
+//     			"cd4" => $postCount,
+//     			"cd5" => $commentsCount,
+//     			"cd6" => $serverSoftware,
+//     		);
+//     
+//     		$this->RemoteOpen('http://www.google-analytics.com/collect', 'post', $postData);
 	}
 
 	/**
